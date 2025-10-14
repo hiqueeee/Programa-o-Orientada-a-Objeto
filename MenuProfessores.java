@@ -13,6 +13,7 @@ public class MenuProfessores {
         System.out.println("2 Alterar ");
         System.out.println("3 Remover ");
         System.out.println("4 Pesquisar ");
+        System.out.println("5 Imprimir ");
         System.out.println("9 Sair ");
         System.out.println(" Digite a opção desejada: ");
         opcao = teclado.nextInt();
@@ -20,18 +21,19 @@ public class MenuProfessores {
     
         if(opcao == 1) {
             
-            Professor prof = new Professor();
-            prof.setCodigo( teclado.nextInt());
-            prof.setNome( teclado.next());
-            prof.setSalario( teclado.nextDouble());
+            Professor objProfessor2 = new Professor();
+            objProfessor = objProfessor2;
+            objProfessor.setCodigo( teclado.nextInt());
+            objProfessor.setNome( teclado.next());
+            objProfessor.setSalario( teclado.nextDouble());
             int genero = teclado.nextInt();
             if (genero == 1) {
-                prof.setGenero(EnumGenero.Feminino);
+                objProfessor.setGenero(EnumGenero.Feminino);
             } else {
-                prof.setGenero(EnumGenero.Masculino);
+                objProfessor.setGenero(EnumGenero.Masculino);
             }
         
-        bancoDados.adicionar(objProfessor);
+                bancoDados.adicionar(objProfessor);
         
         } else if (opcao == 2) {
         } else if (opcao == 3) {
@@ -45,18 +47,15 @@ public class MenuProfessores {
         
         
         if (item != null) {
-            System.out.println("Codigo: " + item.getCodigo());
-            System.out.println("Nome: " + item.getNome());
-            System.out.println("Salario: " + item.getSalario());
-            System.out.println("Genero: " + item.setGenero());
+            item.imprimir();
+        
+        } else {  
+            System.out.println("Professor não localizado");
         }
         
-        } else if (opcao == 9) {
-            System.out.println("Saindo...");
-        } else {
-            System.out.println("Opção inválida");
-        }
-    
+        } else if (opcao == 5) {
+          bancoDados.imprimirTodosProfessores();
+        }    
     
     }while (opcao != 9);
 
