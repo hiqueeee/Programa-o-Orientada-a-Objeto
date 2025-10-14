@@ -121,7 +121,25 @@ public class Professor {
     
     
 }
-                 
+
+EXPLICAÇÃO DE MENU
+
+Menu
+1. Professores
+	11. Adicionar
+	12. Alterar
+	13. Remover
+	14. Pesquisar
+	19. Sair.
+2. Alunos
+	21. Adicionar
+	22. Alterar
+	23. Remover
+	24. Pesquisar
+	29. Sair
+3. Cursos
+4. Disciplinas
+5. Funcionarios
             
 
     
